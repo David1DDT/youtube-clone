@@ -1,0 +1,165 @@
+/* --------------------- Modal Container with Shadow Fade --------------------- */
+.updateContainer {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  max-width: 500px;
+  min-width: 280px;
+  height: 80%;
+  background-color: #ffffff; /* modal stays bright */
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+
+  /* Initial shadow transparent */
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+
+  /* Animation */
+  animation: shadowFadeIn 0.5s forwards, modalFadeIn 0.5s forwards;
+}
+
+/* Fade in box-shadow (dark tint) */
+@keyframes shadowFadeIn {
+  to {
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5),
+      /* big spread for tint */ 0 12px 24px rgba(0, 0, 0, 0.25); /* floating depth */
+  }
+}
+
+/* Modal content fade-in and slight translate */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* --------------------- Close Button --------------------- */
+.closebtn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.closebtn:hover {
+  background-color: #c0392b;
+}
+
+/* --------------------- Upload Form --------------------- */
+.uploadform {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 15px;
+}
+
+/* File input */
+.uploadform input[type="file"] {
+  background-color: #0967cd;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.uploadform input[type="file"]:hover {
+  background-color: #084d9b;
+}
+
+/* Text inputs and textarea */
+.uploadform input[type="text"],
+.uploadform textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.uploadform input[type="text"]:focus,
+.uploadform textarea:focus {
+  outline: none;
+  border-color: #0967cd;
+}
+
+/* Checkbox + label */
+.uploadform .checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+/* Submit button */
+.uploadform button[type="submit"] {
+  background-color: #0967cd;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.uploadform button[type="submit"]:hover {
+  background-color: #084d9b;
+  transform: translateY(-2px);
+}
+
+.uploadform button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* --------------------- Mobile Responsiveness --------------------- */
+@media screen and (max-width: 768px) {
+  .updateContainer {
+    width: 90%;
+    height: 70%;
+    top: 10%;
+    padding: 15px 20px;
+  }
+
+  .closebtn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .uploadform input[type="file"] {
+    padding: 12px;
+  }
+
+  .uploadform input[type="text"],
+  .uploadform textarea {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,181 @@
+/* ================= ROOT PLAYER ================= */
+.yt-player {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  font-family: Roboto, Arial, sans-serif;
+  user-select: none;
+}
+
+/* ================= VIDEO ================= */
+.yt-player video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #000;
+  cursor: pointer;
+}
+
+/* ================= CENTER PLAY ================= */
+.yt-center-play {
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.yt-center-play:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.05);
+}
+
+/* ================= CONTROLS WRAPPER ================= */
+/* ESCAPED % — THIS FIXES YOUR ERROR */
+.mask-y-to-0\%controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* auto-hide support */
+.yt-player.hide-controls .mask-y-to-0\%controls {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ================= GRADIENT ================= */
+.yt-controls-bg {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0)
+  );
+  padding: 10px 12px 8px;
+}
+
+/* ================= PROGRESS BAR ================= */
+.yt-progress {
+  position: relative;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.yt-progress-filled {
+  position: relative;
+  height: 100%;
+  background: #ff0000;
+  width: 0%;
+}
+
+/* YouTube-style hover expand */
+.yt-progress:hover {
+  height: 5px;
+}
+
+.yt-scrubber {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: #ff0000;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.yt-progress:hover .yt-scrubber {
+  opacity: 1;
+}
+
+/* ================= CONTROLS ROW ================= */
+.yt-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  color: #fff;
+  font-size: 13px;
+}
+
+/* ================= LEFT CONTROLS ================= */
+.yt-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ================= BUTTONS ================= */
+.yt-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.yt-btn:hover {
+  opacity: 1;
+}
+
+/* ================= TIME ================= */
+.yt-left span {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* ================= VOLUME ================= */
+.yt-volume {
+  width: 80px;
+  height: 4px;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.yt-volume::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.yt-volume::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  border: none;
+}
+
+/* ================= FULLSCREEN ================= */
+.yt-fullscreen {
+  font-size: 18px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .yt-volume {
+    display: none;
+  }
+}
