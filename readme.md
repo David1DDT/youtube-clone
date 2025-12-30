@@ -1,4 +1,3 @@
-markdown
 
 # YouTube Clone 📹
 
@@ -460,8 +459,3 @@ A: Start by creating a new branch and adding your feature. Make sure to write te
 Ready to dive in? Follow the installation steps and start building your own YouTube clone! Whether you're looking to learn new technologies, contribute to an open-source project, or simply explore a full-stack application, this project offers a great starting point.
 
 Join our community, contribute, and let's build something amazing together! 🚀
-
-```
-
-This README.md provides a comprehensive guide for developers to understand, install, and contribute to your YouTube clone project. It follows modern GitHub README best practices, includes engaging content, and is structured to attract contributors and users alike.
-```
