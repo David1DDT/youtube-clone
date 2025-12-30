@@ -34,7 +34,7 @@ export async function loginHandler(req: Request<{}, {}, LoginBody>, res: Respons
         maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year
         httpOnly: true,
         sameSite: "lax",
-        secure: false
+        secure: true
     })
 
     return res.status(StatusCodes.OK).send(token)

@@ -8,7 +8,7 @@ export default function Page({ params }: { params: Promise<{ videoId: string }> 
     const videoRef = useRef<HTMLVideoElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
 
-    const [playing, setPlaying] = useState(false)
+    const [playing, setPlaying] = useState(true)
     const [progress, setProgress] = useState(0)
     const [duration, setDuration] = useState(0)
     const [volume, setVolume] = useState(1)
