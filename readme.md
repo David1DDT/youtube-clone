@@ -41,7 +41,6 @@ A full-stack YouTube clone built with modern technologies. This project provides
 
 - **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
-- **UI Library**: Mantine UI (v8)
 - **State Management**: React Context API
 - **Styling**: CSS
 - **Icons**: Tabler Icons
