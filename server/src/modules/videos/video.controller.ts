@@ -16,7 +16,7 @@ function getPath({
     extension,
 }: {
     videoId: Video["videoId"];
-    extension: Video["extention"];
+    extension: Video["extension"];
 }) {
     return `${process.cwd()}/videos/${videoId}.${extension}`;
 }
@@ -36,7 +36,7 @@ export async function uploadVideoHandler(req: Request, res: Response) {
         const extension = info.mimeType.split("/")[1];
 
 
-        video = await createVideo({ owner: user._id, extention: extension as string })
+        video = await createVideo({ owner: user._id, extension: extension as string })
 
         if (!extension) {
             return res.sendStatus(StatusCodes.BAD_REQUEST).send("invalid file type")
@@ -108,7 +108,7 @@ export async function streamVideoHandler(req: Request, res: Response) {
 
     const filePath = getPath({
         videoId: video.videoId,
-        extension: video.extention,
+        extension: video.extension,
     });
 
     const fileSizeInBytes = fs.statSync(filePath).size;

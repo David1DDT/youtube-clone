@@ -15,7 +15,7 @@ export class Video {
     public description: string
 
     @prop({ enum: ["mp4"] }) // only mp4 files
-    public extention: string;
+    public extension: string;
 
     @prop({ required: true, ref: () => User })
     public owner: Ref<User>
