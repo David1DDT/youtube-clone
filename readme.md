@@ -1,4 +1,3 @@
-
 # YouTube Clone 📹
 
 ![GitHub Stars](https://img.shields.io/github/stars/David1DDT/youtube-clone?style=for-the-badge)
@@ -8,6 +7,9 @@
 ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge)
 
 A full-stack YouTube clone built with modern technologies. This project provides a complete video-sharing platform with user authentication, video uploads, and a responsive UI.
+
+![main page screenshot](./main-page-screenshot.png)
+![video page screenshot](./video-page-screenshot.png)
 
 ---
 
